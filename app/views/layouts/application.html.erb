@@ -23,13 +23,19 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-           <!--  nav here -->
+            <% if current_user %>
+            <a class="navbar-brand" id="See attractions" href="<%= attractions_path %>"/>See attractions</a>
+            <a class="navbar-brand" id="Log Out" href="<%= logout_path %>"/>Log Out</a>
+            <% else %>
+              <a class="navbar-brand" id="Sign In" href="<%= signin_path %>"/>Sign In</a>
+              <a class="navbar-brand" id="Sign Up" href="<%= new_user_path %>"/>Sign Up</a>
+            <% end %>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
 
-    <!-- content -->
+
     <div class="container"  role="main">
       <%= yield %>
     </div>

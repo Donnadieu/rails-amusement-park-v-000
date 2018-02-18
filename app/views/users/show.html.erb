@@ -1,0 +1,17 @@
+<h1>Welcome back to the theme park!</h1>
+<h2><%= @user.name %></h2>
+<% if current_user.admin %>
+  <h4>ADMIN</h4>
+<% end %>
+
+<div class="message">
+  <p><%= @message unless !@message %></p>
+</div>
+
+<%= content_tag_for(:ul, @user) do%>
+  <li>Height: <%= @user.height %></li>
+  <li>Happiness: <%= @user.happiness %></li>
+  <li>Nausea: <%= @user.nausea %></li>
+  <li>Tickets: <%= @user.tickets %></li>
+  <li>Mood: <%= @user.mood %></li>
+<% end %>
